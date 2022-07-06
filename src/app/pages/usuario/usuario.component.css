@@ -1,0 +1,125 @@
+.topnav {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav a:hover {
+    background-color: #a7001f;
+    color: #ffffff;
+}
+
+.topnav .atras {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav .atras:hover {
+    background-color: #401A39;
+    color: #ffffff;
+}
+
+.usuario {
+    padding-top: 1%;
+}
+
+.usuario .fotoPerfil {
+    width: 100%;
+    height: auto;
+}
+
+.usuario .fotoPerfil img {
+    width: 80%;
+    border-radius: 30px;
+}
+
+.NombreUsuario {
+    text-align: center;
+    padding-top: 5%;
+}
+
+.NombreUsuario h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.usuario .UsuarioDatos {
+    padding-top: 3%;
+}
+
+.UsuarioDatos .UsuarioInfo {
+    text-align: justify;
+    padding-top: 3%;
+}
+
+.UsuarioDatos .UsuarioInfo p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.UsuarioDatos .datosUsuario {
+    text-align: start;
+}
+
+.UsuarioDatos .datosUsuario p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.fecha {
+    width: 30%;
+    margin: auto;
+}
+
+.desglose .tituloHorarios {
+    text-align: center;
+}
+
+.desglose .tituloHorarios h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.fotosHora {
+    padding-top: 1%;
+    padding-bottom: 3%;
+}
+
+.fotosHora .card {
+    border: none;
+    border-radius: 10px;
+}
+
+.imagenes {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.imagenes img {
+    width: 100%;
+}

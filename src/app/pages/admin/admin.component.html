@@ -1,0 +1,125 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#ffffff" type="square-spin" [fullScreen]="true"></ngx-spinner>
+<header>
+    <img src="assets/Asistencia.jpg" alt="" class="img-fluid">
+</header>
+<div class="topnav">
+    <a (click)="Salir()">Cerrar Sesión </a>
+    <a class="atras" (click)="atras()">Usuarios</a>
+</div>
+
+<div class="container">
+    <div class="opciones">
+        <img src="assets/add-user.png" alt="" class="img-fluid" data-bs-toggle="modal" data-bs-target="#addUser">
+    </div>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <div class="card shadow">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Foto</th>
+                            <th scope="col">Nombre</th>
+                            <!-- <th scope="col">Editar</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let xx of registrados">
+                            <td>
+                                <div class="fotoPerfil">
+                                    <img [src]="xx.FOTO" class="d-block ui-w-30 rounded-circle" style="width: 40px; height: auto;" alt="">
+                                </div>
+                            </td>
+                            <td>{{xx.NOMBRE}} {{xx.PRIMER_APELLIDO}} {{xx.SEGUNDO_APELLIDO}}</td>
+                            <!-- <td><i class="bi bi-pencil"></i></td> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Nuevo Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="formulario">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Nombre" [(ngModel)]="data.NOMBRE" (keyup)="ValinaNombre()" maxlength="100">
+                                <label for="floatingInput">Nombre</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Apellido Paterno" [(ngModel)]="data.APELLIDO_PATERNO" (keyup)="ValidaAPATERNO()" maxlength="100">
+                                <label for="floatingPassword">Apellido Paterno</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Apellido Materno" [(ngModel)]="data.APELLIDO_MATERNO" (keyup)="ValidaAMATERNO()" maxlength="100">
+                                <label for="floatingPassword">Apellido Materno</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="form-floating mb-3">
+                                <input type="date" class="form-control" id="floatingPassword" placeholder="Fecha de Nacimiento" [(ngModel)]="data.FECHA" (change)="VaildaFecha()">
+                                <label for="floatingPassword">Fecha de Nacimiento</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example" [(ngModel)]="data.SEXO">
+                                  <option value="H">Hombre</option>
+                                  <option value="M">Mujer</option>
+                                </select>
+                                <label for="floatingSelect">Sexo</label>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="NIP de Seguridad" [(ngModel)]="data.NIP" (keyup)="ValidaNIP()" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="6">
+                                <label for="floatingPassword">NIP de Seguridad</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="!URL_FOTO">
+                        <div class="camara" *ngIf="data.NOMBRE && data.APELLIDO_PATERNO && data.APELLIDO_MATERNO && data.FECHA && data.SEXO && data.NIP && revicion.NIP == 1 && !URL_FOTO">
+                            <webcam [height]="300" [width]="300" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" [imageQuality]="1" [imageType]="('image/jpeg')" (cameraSwitched)="cameraWasSwitched($event)"></webcam>
+                        </div>
+                        <div class="tomarFoto" *ngIf="data.NOMBRE && data.APELLIDO_PATERNO && data.APELLIDO_MATERNO && data.FECHA && data.SEXO && data.NIP &&  !URL_FOTO">
+                            <button type="button" class="btn btn-lg btn-outline-primary" (click)="Foto();"><i class="bi bi-camera2"></i></button>
+                        </div>
+                    </div>
+                    <div *ngIf="URL_FOTO">
+                        <div class="Captura">
+                            <img [src]="URL_FOTO" alt="" class="img-fluid" [height]="300" [width]="300">
+                        </div>
+                        <div class="nuvaFoto" *ngIf="URL_FOTO">
+                            <button type="button" class="btn btn-lg btn-outline-danger" (click)="NuevaFoto()"><i class="bi bi-arrow-clockwise"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="newUsuario">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <div *ngIf="data.NOMBRE && data.APELLIDO_PATERNO && data.APELLIDO_MATERNO && data.FECHA && data.SEXO && data.NIP && revicion.NIP == 1 && URL_FOTO">
+                        <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal" (click)="AgregarUsuario()">Agregar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

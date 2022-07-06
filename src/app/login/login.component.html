@@ -1,0 +1,32 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="large" color="#fff" type="pacman" [fullScreen]="true"></ngx-spinner>
+<div class="fondo">
+    <div class="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="logo">
+                        <img src="assets/EdoMex.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="formulario">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="Usuario" [(ngModel)]="data.USUARIO" (keyup)="ValidacioUsuario()">
+                            <label for="floatingInput">Usuario</label>
+                        </div>
+                        <div class="form-floating">
+                            <input type="password" class="form-control" id="floatingPassword" appPass placeholder="Contraseña" [(ngModel)]="data.PASSWORD" (keyup)="ValidacioPassword()">
+                            <label for="floatingPassword">Contraseña</label>
+                        </div>
+                        <div class="botonLogin">
+                            <button type="button" class="btn btn-lg btn-outline-danger" (click)="Login()">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pie">
+        <svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 200" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(91.392, 0, 0, 1)" offset="0%"></stop><stop stop-color="rgba(255, 22.405, 97.748, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,20L26.7,30C53.3,40,107,60,160,56.7C213.3,53,267,27,320,40C373.3,53,427,107,480,113.3C533.3,120,587,80,640,56.7C693.3,33,747,27,800,40C853.3,53,907,87,960,110C1013.3,133,1067,147,1120,153.3C1173.3,160,1227,160,1280,163.3C1333.3,167,1387,173,1440,170C1493.3,167,1547,153,1600,126.7C1653.3,100,1707,60,1760,50C1813.3,40,1867,60,1920,86.7C1973.3,113,2027,147,2080,156.7C2133.3,167,2187,153,2240,133.3C2293.3,113,2347,87,2400,83.3C2453.3,80,2507,100,2560,113.3C2613.3,127,2667,133,2720,130C2773.3,127,2827,113,2880,120C2933.3,127,2987,153,3040,140C3093.3,127,3147,73,3200,60C3253.3,47,3307,73,3360,96.7C3413.3,120,3467,140,3520,140C3573.3,140,3627,120,3680,93.3C3733.3,67,3787,33,3813,16.7L3840,0L3840,200L3813.3,200C3786.7,200,3733,200,3680,200C3626.7,200,3573,200,3520,200C3466.7,200,3413,200,3360,200C3306.7,200,3253,200,3200,200C3146.7,200,3093,200,3040,200C2986.7,200,2933,200,2880,200C2826.7,200,2773,200,2720,200C2666.7,200,2613,200,2560,200C2506.7,200,2453,200,2400,200C2346.7,200,2293,200,2240,200C2186.7,200,2133,200,2080,200C2026.7,200,1973,200,1920,200C1866.7,200,1813,200,1760,200C1706.7,200,1653,200,1600,200C1546.7,200,1493,200,1440,200C1386.7,200,1333,200,1280,200C1226.7,200,1173,200,1120,200C1066.7,200,1013,200,960,200C906.7,200,853,200,800,200C746.7,200,693,200,640,200C586.7,200,533,200,480,200C426.7,200,373,200,320,200C266.7,200,213,200,160,200C106.7,200,53,200,27,200L0,200Z"></path></svg>
+    </div>
+</div>

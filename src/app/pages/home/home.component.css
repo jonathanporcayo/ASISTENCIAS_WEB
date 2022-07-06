@@ -1,0 +1,80 @@
+.topnav {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav a:hover {
+    background-color: #a7001f;
+    color: #ffffff;
+}
+
+.topnav .atras {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav .atras:hover {
+    background-color: #401A39;
+    color: #ffffff;
+}
+
+.tabla {
+    padding-top: 1%;
+}
+
+.tabla .card {
+    border: none;
+}
+
+.tabla .fecha {
+    width: 50%;
+    margin: auto;
+}
+
+.tabla .fecha h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.tabla .fotoPerfil {
+    width: 100%;
+}
+
+.tabla .fotoPerfil img {
+    border-radius: 10px;
+}
+
+.fotoAsistencia {
+    width: 100%;
+    padding-top: 1%;
+}
+
+.fotoAsistencia img {
+    width: 5%;
+}
+
+.infoAsistencia {
+    padding-top: 1%;
+}

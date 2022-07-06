@@ -1,0 +1,45 @@
+.fondo {
+    background-image: url('../../assets/White.jpg');
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.login {
+    margin: auto;
+    padding-top: 15%;
+}
+
+.login .card {
+    border: none;
+}
+
+.login .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 6%;
+}
+
+.login .logo img {
+    width: 80%;
+}
+
+.login .formulario {
+    padding-top: 5%;
+}
+
+.login .botonLogin {
+    padding-top: 2%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pie {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

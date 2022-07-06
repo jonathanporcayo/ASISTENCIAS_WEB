@@ -1,0 +1,107 @@
+.topnav {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav a:hover {
+    background-color: #a7001f;
+    color: #ffffff;
+}
+
+.topnav .atras {
+    float: left;
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 30px;
+    text-decoration: none;
+    transition: ease .5s;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.topnav .atras:hover {
+    background-color: #401A39;
+    color: #ffffff;
+}
+
+.opciones {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 1%;
+}
+
+.opciones img {
+    width: 5%;
+    cursor: pointer;
+}
+
+.tabla {
+    padding-top: 3%;
+}
+
+.tabla .card {
+    border: none;
+}
+
+.modal-header {
+    background-color: #401A39;
+}
+
+.modal-header h5 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.newUsuario {
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.camara {
+    display: flex;
+    justify-content: center;
+}
+
+.tomarFoto {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.Captura {
+    display: flex;
+    justify-content: center;
+}
+
+.nuvaFoto {
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.tabla .fotoPerfil {
+    width: 100%;
+}
+
+.tabla .fotoPerfil img {
+    width: 5%;
+}

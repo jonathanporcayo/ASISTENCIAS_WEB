@@ -1,0 +1,155 @@
+<header>
+    <img src="assets/Asistencia.jpg" alt="" class="img-fluid">
+</header>
+<div class="topnav">
+    <a (click)="Salir()">Cerrar Sesión </a>
+    <a class="atras" (click)="Admin()">Nuevo Usuario</a>
+</div>
+
+<div class="container">
+    <div class="tabla">
+        <div class="card shadow">
+            <div class="card-body">
+                <div class="fecha">
+                    <h5>Buscar por Fecha</h5>
+                    <div class="input-group mb-3">
+                        <input type="date" class="form-control" [(ngModel)]="data.FECHA" (change)="ValidaFecha()">
+                        <button *ngIf="data.FECHA" class="btn btn-primary" (click)="buscar()"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <div class="tablaAsistencias">
+                    <div *ngFor="let xx of empleados">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <tbody>
+                                    <td>
+                                        <div class="fotoPerfil">
+                                            <img [src]="xx.FOTO" class="d-block ui-w-30 rounded-circle" style="width: 50px; height: auto;" alt="">
+                                        </div>
+                                    </td>
+                                    <td style="font-size:15px; font-weight: 500; font-family: 'Open Sans', sans-serif; letter-spacing: 3px;">
+                                        &nbsp; &nbsp; {{xx.NOMBRE}} {{xx.PRIMER_APELLIDO}} {{xx.SEGUNDO_APELLIDO}}
+                                    </td>
+                                </tbody>
+                                <div class="infoAsistencia">
+                                    <div *ngFor="let zz of registros">
+                                        <div *ngIf="xx.CVE_EMPLEADO == zz.CVE_EMPLEADO">
+                                            <div *ngIf="zz.TIPOACCESO == 1">
+                                                <div class="row" *ngIf="zz.HORA">
+                                                    <div class="col-3">
+                                                        Entrada:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="zz.TIPOACCESO == 2">
+                                                <div class="row" *ngIf="zz.HORA != null">
+                                                    <div class="col-3">
+                                                        Salida:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="zz.TIPOACCESO == 3">
+                                                <div class="row" *ngIf="zz.HORA != null">
+                                                    <div class="col-3">
+                                                        Salida a Comer:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="zz.TIPOACCESO == 4">
+                                                <div class="row" *ngIf="zz.HORA != null">
+                                                    <div class="col-3">
+                                                        Regreso de Comer:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="zz.TIPOACCESO == 5">
+                                                <div class="row" *ngIf="zz.HORA != null">
+                                                    <div class="col-3">
+                                                        Reunión:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div *ngIf="zz.TIPOACCESO == 6">
+                                                <div class="row" *ngIf="zz.HORA != null">
+                                                    <div class="col-3">
+                                                        Otros:
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <strong>{{zz.HORA}} </strong>
+                                                    </div>
+                                                    <div class="col-3">
+                                                        {{zz.FECHA}}
+                                                    </div>
+                                                    <div class="col-3">
+                                                        <div class="fotoAsistencia">
+                                                            <img [src]="zz.FOTO" class="img-fluid" style="width: 40px; height: auto;" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
