@@ -8,12 +8,13 @@ import { WebcamModule } from 'ngx-webcam';
 import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppComponent } from './app.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PassDirective } from './login/pass.directive';
 import { UsuarioComponent } from './pages/usuario/usuario.component';
 import { AdminComponent } from './pages/admin/admin.component';
+
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [

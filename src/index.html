@@ -9,10 +9,31 @@
     <link rel="icon" type="image/x-icon" href="assets/iconoM.png">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
     <app-root></app-root>
+    <script>
+        if (localStorage.getItem('USERASISTENCIA')) {
+            (function($) {
+                var timeout;
+                $(document).on('mousemove', function(event) {
+                    if (timeout !== undefined) {
+                        window.clearTimeout(timeout);
+                    }
+                    timeout = window.setTimeout(function() {
+                        //Creas una funcion nueva para jquery 
+                        $(event.target).trigger('mousemoveend');
+                    }, 3600000); //determinas el tiempo en milisegundo aqui 5 segundos
+                });
+            }(jQuery));
+            $(document).on('mousemoveend', function() { //agregas la nueva funcion creada, puede ser una clase o un id
+                localStorage.clear()
+                window.location.href = "https://appsf.cggedomex.gob.mx:8443/asistencias/";
+            });
+        }
+    </script>
 </body>
 
 </html>
