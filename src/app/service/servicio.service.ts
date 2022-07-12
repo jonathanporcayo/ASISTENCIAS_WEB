@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioService {
 
-  // URL: any = "http://10.1.6.18:3002/KND"
-  URL: any = "https://appsb.cggedomex.gob.mx:7443/KND"
+  URL: any = environment.URL
 
   constructor(private http: HttpClient) { }
 
